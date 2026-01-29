@@ -11,8 +11,8 @@ from fastapi import FastAPI
 from fastapi.encoders import jsonable_encoder
 from starlette.responses import RedirectResponse
 
-from chat import Message, User
-from server import load_server_from_file, write_server_file, Server
+from webserver.chat import Message, User
+from webserver.server import load_server_from_file, write_server_file, Server
 
 
 @asynccontextmanager

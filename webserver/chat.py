@@ -1,5 +1,5 @@
 from dataclasses import dataclass
-from datetime import time
+from datetime import datetime
 
 from pydantic import BaseModel
 
@@ -12,7 +12,7 @@ class Message(BaseModel):
     is_server_message: bool
     author: User
     string: str
-    timestamp: time
+    timestamp: datetime
 
 
 class Chat(BaseModel):

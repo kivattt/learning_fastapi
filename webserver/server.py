@@ -5,7 +5,7 @@ from uuid import uuid4, UUID
 
 from pydantic import ValidationError, BaseModel, PrivateAttr
 
-from chat import User, Chat, Message
+from webserver.chat import User, Chat, Message
 
 THE_SERVER_USER: User = User(username = "server")
 
