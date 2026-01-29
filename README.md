@@ -4,4 +4,4 @@
 - No authentication
 - Server data is kept in a .json file called `server.json`
 - Might be missing global keyword for the chats mutex... Need to look into it
-- Poor directory structure, my excuse being `uv` broke on me when I tried doing something about it lol
+- Poor project directory structure, my excuse being `uv` broke on me when I tried doing something about it lol
