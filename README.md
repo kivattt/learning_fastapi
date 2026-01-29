@@ -4,7 +4,7 @@ CHAT_ENVIRONMENT=dev uv run uvicorn "webserver.main:app" --reload
 ```
 
 <details>
-<summary>Running inside PyCharm</summary>
+<summary>Running inside PyCharm (click to expand)</summary>
 If you are using PyCharm, you can create a run configuration like this:
 
 In the Run/Debug Configurations menu, click `+` and select FastAPI.\
