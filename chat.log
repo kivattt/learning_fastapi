@@ -1,0 +1,653 @@
+2026-01-29 22:47:10,803 - INFO - Started server process [67029]
+2026-01-29 22:47:10,803 - INFO - Waiting for application startup.
+2026-01-29 22:47:10,803 - INFO - Application startup complete.
+2026-01-29 22:47:46,281 - INFO - Shutting down
+2026-01-29 22:47:46,382 - INFO - Waiting for application shutdown.
+2026-01-29 22:47:46,391 - ERROR - Traceback (most recent call last):
+  File "/home/kivah/main/projects/learning_pydantic2/.venv/lib/python3.14/site-packages/starlette/routing.py", line 694, in lifespan
+    async with self.lifespan_context(app) as maybe_state:
+               ~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "/home/kivah/.local/share/uv/python/cpython-3.14.2-linux-x86_64-gnu/lib/python3.14/contextlib.py", line 221, in __aexit__
+    await anext(self.gen)
+  File "/home/kivah/main/projects/learning_pydantic2/main.py", line 18, in lifespan
+    shutdown()
+    ~~~~~~~~^^
+  File "/home/kivah/main/projects/learning_pydantic2/main.py", line 110, in shutdown
+    write_server_file(server_global, server_filename)
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kivah/main/projects/learning_pydantic2/server.py", line 37, in write_server_file
+    data = server.model_dump_json()
+           ^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'model_dump_json'
+
+2026-01-29 22:47:46,391 - ERROR - Application shutdown failed. Exiting.
+2026-01-29 22:47:46,391 - INFO - Finished server process [67029]
+2026-01-29 22:47:55,529 - INFO - Started server process [67072]
+2026-01-29 22:47:55,529 - INFO - Waiting for application startup.
+2026-01-29 22:47:55,529 - INFO - Application startup complete.
+2026-01-29 22:48:00,364 - INFO - 127.0.0.1:55420 - "GET / HTTP/1.1" 404
+2026-01-29 22:48:00,402 - INFO - 127.0.0.1:55422 - "GET /favicon.ico HTTP/1.1" 404
+2026-01-29 22:48:03,439 - INFO - 127.0.0.1:55420 - "GET /docs HTTP/1.1" 200
+2026-01-29 22:48:03,629 - INFO - 127.0.0.1:55420 - "GET /openapi.json HTTP/1.1" 200
+2026-01-29 22:48:10,268 - INFO - Shutting down
+2026-01-29 22:48:10,368 - INFO - Waiting for application shutdown.
+2026-01-29 22:48:10,369 - ERROR - Traceback (most recent call last):
+  File "/home/kivah/main/projects/learning_pydantic2/.venv/lib/python3.14/site-packages/starlette/routing.py", line 694, in lifespan
+    async with self.lifespan_context(app) as maybe_state:
+               ~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "/home/kivah/.local/share/uv/python/cpython-3.14.2-linux-x86_64-gnu/lib/python3.14/contextlib.py", line 221, in __aexit__
+    await anext(self.gen)
+  File "/home/kivah/main/projects/learning_pydantic2/main.py", line 18, in lifespan
+    shutdown()
+    ~~~~~~~~^^
+  File "/home/kivah/main/projects/learning_pydantic2/main.py", line 110, in shutdown
+    write_server_file(server_global, server_filename)
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kivah/main/projects/learning_pydantic2/server.py", line 37, in write_server_file
+    data = server.model_dump_json()
+           ^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'model_dump_json'
+
+2026-01-29 22:48:10,369 - ERROR - Application shutdown failed. Exiting.
+2026-01-29 22:48:10,370 - INFO - Finished server process [67072]
+2026-01-29 22:48:24,078 - INFO - Started server process [67191]
+2026-01-29 22:48:24,078 - INFO - Waiting for application startup.
+2026-01-29 22:48:24,078 - INFO - Application startup complete.
+2026-01-29 22:48:31,828 - INFO - 127.0.0.1:51616 - "GET /docs HTTP/1.1" 200
+2026-01-29 22:48:32,014 - INFO - 127.0.0.1:51616 - "GET /openapi.json HTTP/1.1" 200
+2026-01-29 22:48:37,526 - INFO - 127.0.0.1:51626 - "POST /chats HTTP/1.1" 500
+2026-01-29 22:48:37,526 - ERROR - Exception in ASGI application
+Traceback (most recent call last):
+  File "/home/kivah/main/projects/learning_pydantic2/.venv/lib/python3.14/site-packages/uvicorn/protocols/http/h11_impl.py", line 410, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        self.scope, self.receive, self.send
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/kivah/main/projects/learning_pydantic2/.venv/lib/python3.14/site-packages/uvicorn/middleware/proxy_headers.py", line 60, in __call__
+    return await self.app(scope, receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kivah/main/projects/learning_pydantic2/.venv/lib/python3.14/site-packages/fastapi/applications.py", line 1135, in __call__
+    await super().__call__(scope, receive, send)
+  File "/home/kivah/main/projects/learning_pydantic2/.venv/lib/python3.14/site-packages/starlette/applications.py", line 107, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/home/kivah/main/projects/learning_pydantic2/.venv/lib/python3.14/site-packages/starlette/middleware/errors.py", line 186, in __call__
+    raise exc
+  File "/home/kivah/main/projects/learning_pydantic2/.venv/lib/python3.14/site-packages/starlette/middleware/errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "/home/kivah/main/projects/learning_pydantic2/.venv/lib/python3.14/site-packages/starlette/middleware/exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "/home/kivah/main/projects/learning_pydantic2/.venv/lib/python3.14/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/home/kivah/main/projects/learning_pydantic2/.venv/lib/python3.14/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/home/kivah/main/projects/learning_pydantic2/.venv/lib/python3.14/site-packages/fastapi/middleware/asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "/home/kivah/main/projects/learning_pydantic2/.venv/lib/python3.14/site-packages/starlette/routing.py", line 716, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/home/kivah/main/projects/learning_pydantic2/.venv/lib/python3.14/site-packages/starlette/routing.py", line 736, in app
+    await route.handle(scope, receive, send)
+  File "/home/kivah/main/projects/learning_pydantic2/.venv/lib/python3.14/site-packages/starlette/routing.py", line 290, in handle
+    await self.app(scope, receive, send)
+  File "/home/kivah/main/projects/learning_pydantic2/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 115, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "/home/kivah/main/projects/learning_pydantic2/.venv/lib/python3.14/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/home/kivah/main/projects/learning_pydantic2/.venv/lib/python3.14/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/home/kivah/main/projects/learning_pydantic2/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 101, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "/home/kivah/main/projects/learning_pydantic2/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 355, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "/home/kivah/main/projects/learning_pydantic2/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 243, in run_endpoint_function
+    return await dependant.call(**values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kivah/main/projects/learning_pydantic2/main.py", line 78, in chats_list
+    with server_global._chats_lock:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute '_chats_lock'
+2026-01-29 22:49:21,418 - INFO - Shutting down
+2026-01-29 22:49:21,519 - INFO - Waiting for application shutdown.
+2026-01-29 22:49:21,520 - ERROR - Traceback (most recent call last):
+  File "/home/kivah/main/projects/learning_pydantic2/.venv/lib/python3.14/site-packages/starlette/routing.py", line 694, in lifespan
+    async with self.lifespan_context(app) as maybe_state:
+               ~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "/home/kivah/.local/share/uv/python/cpython-3.14.2-linux-x86_64-gnu/lib/python3.14/contextlib.py", line 221, in __aexit__
+    await anext(self.gen)
+  File "/home/kivah/main/projects/learning_pydantic2/main.py", line 18, in lifespan
+    shutdown()
+    ~~~~~~~~^^
+  File "/home/kivah/main/projects/learning_pydantic2/main.py", line 110, in shutdown
+    try:
+    
+  File "/home/kivah/main/projects/learning_pydantic2/server.py", line 37, in write_server_file
+    data = server.model_dump_json()
+           ^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'model_dump_json'
+
+2026-01-29 22:49:21,520 - ERROR - Application shutdown failed. Exiting.
+2026-01-29 22:49:21,520 - INFO - Finished server process [67191]
+2026-01-29 22:49:21,807 - INFO - Started server process [67275]
+2026-01-29 22:49:21,807 - INFO - Waiting for application startup.
+2026-01-29 22:49:21,808 - INFO - Application startup complete.
+2026-01-29 22:49:24,671 - INFO - 127.0.0.1:47154 - "POST /chats HTTP/1.1" 500
+2026-01-29 22:49:24,671 - ERROR - Exception in ASGI application
+Traceback (most recent call last):
+  File "/home/kivah/main/projects/learning_pydantic2/.venv/lib/python3.14/site-packages/uvicorn/protocols/http/h11_impl.py", line 410, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        self.scope, self.receive, self.send
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/kivah/main/projects/learning_pydantic2/.venv/lib/python3.14/site-packages/uvicorn/middleware/proxy_headers.py", line 60, in __call__
+    return await self.app(scope, receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kivah/main/projects/learning_pydantic2/.venv/lib/python3.14/site-packages/fastapi/applications.py", line 1135, in __call__
+    await super().__call__(scope, receive, send)
+  File "/home/kivah/main/projects/learning_pydantic2/.venv/lib/python3.14/site-packages/starlette/applications.py", line 107, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/home/kivah/main/projects/learning_pydantic2/.venv/lib/python3.14/site-packages/starlette/middleware/errors.py", line 186, in __call__
+    raise exc
+  File "/home/kivah/main/projects/learning_pydantic2/.venv/lib/python3.14/site-packages/starlette/middleware/errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "/home/kivah/main/projects/learning_pydantic2/.venv/lib/python3.14/site-packages/starlette/middleware/exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "/home/kivah/main/projects/learning_pydantic2/.venv/lib/python3.14/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/home/kivah/main/projects/learning_pydantic2/.venv/lib/python3.14/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/home/kivah/main/projects/learning_pydantic2/.venv/lib/python3.14/site-packages/fastapi/middleware/asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "/home/kivah/main/projects/learning_pydantic2/.venv/lib/python3.14/site-packages/starlette/routing.py", line 716, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/home/kivah/main/projects/learning_pydantic2/.venv/lib/python3.14/site-packages/starlette/routing.py", line 736, in app
+    await route.handle(scope, receive, send)
+  File "/home/kivah/main/projects/learning_pydantic2/.venv/lib/python3.14/site-packages/starlette/routing.py", line 290, in handle
+    await self.app(scope, receive, send)
+  File "/home/kivah/main/projects/learning_pydantic2/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 115, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "/home/kivah/main/projects/learning_pydantic2/.venv/lib/python3.14/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/home/kivah/main/projects/learning_pydantic2/.venv/lib/python3.14/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/home/kivah/main/projects/learning_pydantic2/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 101, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "/home/kivah/main/projects/learning_pydantic2/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 355, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "/home/kivah/main/projects/learning_pydantic2/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 243, in run_endpoint_function
+    return await dependant.call(**values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kivah/main/projects/learning_pydantic2/main.py", line 79, in chats_list
+    with server_global._chats_lock:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute '_chats_lock'
+2026-01-29 22:49:59,594 - INFO - Shutting down
+2026-01-29 22:49:59,695 - INFO - Waiting for application shutdown.
+2026-01-29 22:49:59,696 - ERROR - Traceback (most recent call last):
+  File "/home/kivah/main/projects/learning_pydantic2/.venv/lib/python3.14/site-packages/starlette/routing.py", line 694, in lifespan
+    async with self.lifespan_context(app) as maybe_state:
+               ~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "/home/kivah/.local/share/uv/python/cpython-3.14.2-linux-x86_64-gnu/lib/python3.14/contextlib.py", line 221, in __aexit__
+    await anext(self.gen)
+  File "/home/kivah/main/projects/learning_pydantic2/main.py", line 18, in lifespan
+    shutdown()
+    ~~~~~~~~^^
+  File "/home/kivah/main/projects/learning_pydantic2/main.py", line 111, in shutdown
+    while running:
+            ^^^^^^
+  File "/home/kivah/main/projects/learning_pydantic2/server.py", line 37, in write_server_file
+    data = server.model_dump_json()
+           ^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'model_dump_json'
+
+2026-01-29 22:49:59,696 - ERROR - Application shutdown failed. Exiting.
+2026-01-29 22:49:59,696 - INFO - Finished server process [67275]
+2026-01-29 22:49:59,996 - INFO - Started server process [67314]
+2026-01-29 22:49:59,997 - INFO - Waiting for application startup.
+2026-01-29 22:49:59,997 - INFO - Application startup complete.
+2026-01-29 22:50:27,367 - INFO - Shutting down
+2026-01-29 22:50:27,467 - INFO - Waiting for application shutdown.
+2026-01-29 22:50:27,468 - ERROR - Traceback (most recent call last):
+  File "/home/kivah/main/projects/learning_pydantic2/.venv/lib/python3.14/site-packages/starlette/routing.py", line 694, in lifespan
+    async with self.lifespan_context(app) as maybe_state:
+               ~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "/home/kivah/.local/share/uv/python/cpython-3.14.2-linux-x86_64-gnu/lib/python3.14/contextlib.py", line 221, in __aexit__
+    await anext(self.gen)
+  File "/home/kivah/main/projects/learning_pydantic2/main.py", line 18, in lifespan
+    yield
+  File "/home/kivah/main/projects/learning_pydantic2/main.py", line 113, in shutdown
+    try:
+    
+  File "/home/kivah/main/projects/learning_pydantic2/server.py", line 37, in write_server_file
+    data = server.model_dump_json()
+           ^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'model_dump_json'
+
+2026-01-29 22:50:27,468 - ERROR - Application shutdown failed. Exiting.
+2026-01-29 22:50:27,468 - INFO - Finished server process [67314]
+2026-01-29 22:50:27,753 - INFO - Started server process [67342]
+2026-01-29 22:50:27,753 - INFO - Waiting for application startup.
+2026-01-29 22:50:27,753 - INFO - Application startup complete.
+2026-01-29 22:51:00,022 - INFO - 127.0.0.1:60710 - "POST /chats HTTP/1.1" 500
+2026-01-29 22:51:00,022 - ERROR - Exception in ASGI application
+Traceback (most recent call last):
+  File "/home/kivah/main/projects/learning_pydantic2/.venv/lib/python3.14/site-packages/uvicorn/protocols/http/h11_impl.py", line 410, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        self.scope, self.receive, self.send
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/kivah/main/projects/learning_pydantic2/.venv/lib/python3.14/site-packages/uvicorn/middleware/proxy_headers.py", line 60, in __call__
+    return await self.app(scope, receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kivah/main/projects/learning_pydantic2/.venv/lib/python3.14/site-packages/fastapi/applications.py", line 1135, in __call__
+    await super().__call__(scope, receive, send)
+  File "/home/kivah/main/projects/learning_pydantic2/.venv/lib/python3.14/site-packages/starlette/applications.py", line 107, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/home/kivah/main/projects/learning_pydantic2/.venv/lib/python3.14/site-packages/starlette/middleware/errors.py", line 186, in __call__
+    raise exc
+  File "/home/kivah/main/projects/learning_pydantic2/.venv/lib/python3.14/site-packages/starlette/middleware/errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "/home/kivah/main/projects/learning_pydantic2/.venv/lib/python3.14/site-packages/starlette/middleware/exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "/home/kivah/main/projects/learning_pydantic2/.venv/lib/python3.14/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/home/kivah/main/projects/learning_pydantic2/.venv/lib/python3.14/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/home/kivah/main/projects/learning_pydantic2/.venv/lib/python3.14/site-packages/fastapi/middleware/asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "/home/kivah/main/projects/learning_pydantic2/.venv/lib/python3.14/site-packages/starlette/routing.py", line 716, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/home/kivah/main/projects/learning_pydantic2/.venv/lib/python3.14/site-packages/starlette/routing.py", line 736, in app
+    await route.handle(scope, receive, send)
+  File "/home/kivah/main/projects/learning_pydantic2/.venv/lib/python3.14/site-packages/starlette/routing.py", line 290, in handle
+    await self.app(scope, receive, send)
+  File "/home/kivah/main/projects/learning_pydantic2/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 115, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "/home/kivah/main/projects/learning_pydantic2/.venv/lib/python3.14/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/home/kivah/main/projects/learning_pydantic2/.venv/lib/python3.14/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/home/kivah/main/projects/learning_pydantic2/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 101, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "/home/kivah/main/projects/learning_pydantic2/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 355, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "/home/kivah/main/projects/learning_pydantic2/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 243, in run_endpoint_function
+    return await dependant.call(**values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kivah/main/projects/learning_pydantic2/main.py", line 80, in chats_list
+    with server_global._chats_lock:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute '_chats_lock'
+2026-01-29 22:51:37,513 - INFO - Shutting down
+2026-01-29 22:51:37,613 - INFO - Waiting for application shutdown.
+2026-01-29 22:51:37,614 - ERROR - Traceback (most recent call last):
+  File "/home/kivah/main/projects/learning_pydantic2/.venv/lib/python3.14/site-packages/starlette/routing.py", line 694, in lifespan
+    async with self.lifespan_context(app) as maybe_state:
+               ~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "/home/kivah/.local/share/uv/python/cpython-3.14.2-linux-x86_64-gnu/lib/python3.14/contextlib.py", line 221, in __aexit__
+    await anext(self.gen)
+  File "/home/kivah/main/projects/learning_pydantic2/main.py", line 19, in lifespan
+    shutdown()
+    ~~~~~~~~^^
+  File "/home/kivah/main/projects/learning_pydantic2/main.py", line 114, in shutdown
+    try:
+    
+  File "/home/kivah/main/projects/learning_pydantic2/server.py", line 37, in write_server_file
+    data = server.model_dump_json()
+           ^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'model_dump_json'
+
+2026-01-29 22:51:37,614 - ERROR - Application shutdown failed. Exiting.
+2026-01-29 22:51:37,614 - INFO - Finished server process [67342]
+2026-01-29 22:51:37,894 - INFO - Started server process [67387]
+2026-01-29 22:51:37,894 - INFO - Waiting for application startup.
+2026-01-29 22:51:37,894 - INFO - Application startup complete.
+2026-01-29 22:51:57,794 - INFO - 127.0.0.1:59142 - "POST /chats HTTP/1.1" 500
+2026-01-29 22:51:57,795 - ERROR - Exception in ASGI application
+Traceback (most recent call last):
+  File "/home/kivah/main/projects/learning_pydantic2/.venv/lib/python3.14/site-packages/uvicorn/protocols/http/h11_impl.py", line 410, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        self.scope, self.receive, self.send
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/kivah/main/projects/learning_pydantic2/.venv/lib/python3.14/site-packages/uvicorn/middleware/proxy_headers.py", line 60, in __call__
+    return await self.app(scope, receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kivah/main/projects/learning_pydantic2/.venv/lib/python3.14/site-packages/fastapi/applications.py", line 1135, in __call__
+    await super().__call__(scope, receive, send)
+  File "/home/kivah/main/projects/learning_pydantic2/.venv/lib/python3.14/site-packages/starlette/applications.py", line 107, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/home/kivah/main/projects/learning_pydantic2/.venv/lib/python3.14/site-packages/starlette/middleware/errors.py", line 186, in __call__
+    raise exc
+  File "/home/kivah/main/projects/learning_pydantic2/.venv/lib/python3.14/site-packages/starlette/middleware/errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "/home/kivah/main/projects/learning_pydantic2/.venv/lib/python3.14/site-packages/starlette/middleware/exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "/home/kivah/main/projects/learning_pydantic2/.venv/lib/python3.14/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/home/kivah/main/projects/learning_pydantic2/.venv/lib/python3.14/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/home/kivah/main/projects/learning_pydantic2/.venv/lib/python3.14/site-packages/fastapi/middleware/asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "/home/kivah/main/projects/learning_pydantic2/.venv/lib/python3.14/site-packages/starlette/routing.py", line 716, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/home/kivah/main/projects/learning_pydantic2/.venv/lib/python3.14/site-packages/starlette/routing.py", line 736, in app
+    await route.handle(scope, receive, send)
+  File "/home/kivah/main/projects/learning_pydantic2/.venv/lib/python3.14/site-packages/starlette/routing.py", line 290, in handle
+    await self.app(scope, receive, send)
+  File "/home/kivah/main/projects/learning_pydantic2/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 115, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "/home/kivah/main/projects/learning_pydantic2/.venv/lib/python3.14/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/home/kivah/main/projects/learning_pydantic2/.venv/lib/python3.14/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/home/kivah/main/projects/learning_pydantic2/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 101, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "/home/kivah/main/projects/learning_pydantic2/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 355, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "/home/kivah/main/projects/learning_pydantic2/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 243, in run_endpoint_function
+    return await dependant.call(**values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kivah/main/projects/learning_pydantic2/main.py", line 81, in chats_list
+    with server_global._chats_lock:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute '_chats_lock'
+2026-01-29 22:52:15,187 - INFO - Shutting down
+2026-01-29 22:52:15,287 - INFO - Waiting for application shutdown.
+2026-01-29 22:52:15,288 - ERROR - Traceback (most recent call last):
+  File "/home/kivah/main/projects/learning_pydantic2/.venv/lib/python3.14/site-packages/starlette/routing.py", line 694, in lifespan
+    async with self.lifespan_context(app) as maybe_state:
+               ~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "/home/kivah/.local/share/uv/python/cpython-3.14.2-linux-x86_64-gnu/lib/python3.14/contextlib.py", line 221, in __aexit__
+    await anext(self.gen)
+  File "/home/kivah/main/projects/learning_pydantic2/main.py", line 19, in lifespan
+    shutdown()
+    ~~~~~~~~^^
+  File "/home/kivah/main/projects/learning_pydantic2/main.py", line 115, in shutdown
+    try:
+    
+  File "/home/kivah/main/projects/learning_pydantic2/server.py", line 37, in write_server_file
+    data = server.model_dump_json()
+           ^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'model_dump_json'
+
+2026-01-29 22:52:15,288 - ERROR - Application shutdown failed. Exiting.
+2026-01-29 22:52:15,288 - INFO - Finished server process [67387]
+2026-01-29 22:52:15,565 - INFO - Started server process [67423]
+2026-01-29 22:52:15,565 - INFO - Waiting for application startup.
+2026-01-29 22:52:15,565 - INFO - Application startup complete.
+2026-01-29 22:52:18,443 - INFO - 127.0.0.1:54454 - "POST /chats HTTP/1.1" 500
+2026-01-29 22:52:18,443 - ERROR - Exception in ASGI application
+Traceback (most recent call last):
+  File "/home/kivah/main/projects/learning_pydantic2/.venv/lib/python3.14/site-packages/uvicorn/protocols/http/h11_impl.py", line 410, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        self.scope, self.receive, self.send
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/kivah/main/projects/learning_pydantic2/.venv/lib/python3.14/site-packages/uvicorn/middleware/proxy_headers.py", line 60, in __call__
+    return await self.app(scope, receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kivah/main/projects/learning_pydantic2/.venv/lib/python3.14/site-packages/fastapi/applications.py", line 1135, in __call__
+    await super().__call__(scope, receive, send)
+  File "/home/kivah/main/projects/learning_pydantic2/.venv/lib/python3.14/site-packages/starlette/applications.py", line 107, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/home/kivah/main/projects/learning_pydantic2/.venv/lib/python3.14/site-packages/starlette/middleware/errors.py", line 186, in __call__
+    raise exc
+  File "/home/kivah/main/projects/learning_pydantic2/.venv/lib/python3.14/site-packages/starlette/middleware/errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "/home/kivah/main/projects/learning_pydantic2/.venv/lib/python3.14/site-packages/starlette/middleware/exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "/home/kivah/main/projects/learning_pydantic2/.venv/lib/python3.14/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/home/kivah/main/projects/learning_pydantic2/.venv/lib/python3.14/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/home/kivah/main/projects/learning_pydantic2/.venv/lib/python3.14/site-packages/fastapi/middleware/asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "/home/kivah/main/projects/learning_pydantic2/.venv/lib/python3.14/site-packages/starlette/routing.py", line 716, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/home/kivah/main/projects/learning_pydantic2/.venv/lib/python3.14/site-packages/starlette/routing.py", line 736, in app
+    await route.handle(scope, receive, send)
+  File "/home/kivah/main/projects/learning_pydantic2/.venv/lib/python3.14/site-packages/starlette/routing.py", line 290, in handle
+    await self.app(scope, receive, send)
+  File "/home/kivah/main/projects/learning_pydantic2/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 115, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "/home/kivah/main/projects/learning_pydantic2/.venv/lib/python3.14/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/home/kivah/main/projects/learning_pydantic2/.venv/lib/python3.14/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/home/kivah/main/projects/learning_pydantic2/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 101, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "/home/kivah/main/projects/learning_pydantic2/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 355, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "/home/kivah/main/projects/learning_pydantic2/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 243, in run_endpoint_function
+    return await dependant.call(**values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kivah/main/projects/learning_pydantic2/main.py", line 82, in chats_list
+    with server_global._chats_lock:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute '_chats_lock'
+2026-01-29 22:53:53,887 - INFO - Shutting down
+2026-01-29 22:53:53,988 - INFO - Waiting for application shutdown.
+2026-01-29 22:53:53,989 - ERROR - Traceback (most recent call last):
+  File "/home/kivah/main/projects/learning_pydantic2/.venv/lib/python3.14/site-packages/starlette/routing.py", line 694, in lifespan
+    async with self.lifespan_context(app) as maybe_state:
+               ~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "/home/kivah/.local/share/uv/python/cpython-3.14.2-linux-x86_64-gnu/lib/python3.14/contextlib.py", line 221, in __aexit__
+    await anext(self.gen)
+  File "/home/kivah/main/projects/learning_pydantic2/main.py", line 19, in lifespan
+    shutdown()
+    ~~~~~~~~^^
+  File "/home/kivah/main/projects/learning_pydantic2/main.py", line 116, in shutdown
+    try:
+    
+  File "/home/kivah/main/projects/learning_pydantic2/server.py", line 37, in write_server_file
+    data = server.model_dump_json()
+           ^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'model_dump_json'
+
+2026-01-29 22:53:53,989 - ERROR - Application shutdown failed. Exiting.
+2026-01-29 22:53:53,989 - INFO - Finished server process [67423]
+2026-01-29 22:54:09,870 - INFO - Started server process [67513]
+2026-01-29 22:54:09,870 - INFO - Waiting for application startup.
+2026-01-29 22:54:09,870 - INFO - Application startup complete.
+2026-01-29 22:54:12,270 - INFO - 127.0.0.1:60654 - "POST /chats HTTP/1.1" 200
+2026-01-29 22:54:37,537 - INFO - Shutting down
+2026-01-29 22:54:37,637 - INFO - Waiting for application shutdown.
+2026-01-29 22:54:37,637 - INFO - Application shutdown complete.
+2026-01-29 22:54:37,637 - INFO - Finished server process [67513]
+2026-01-29 22:54:57,333 - INFO - Started server process [67597]
+2026-01-29 22:54:57,333 - INFO - Waiting for application startup.
+2026-01-29 22:54:57,334 - INFO - Application startup complete.
+2026-01-29 22:55:00,227 - INFO - 127.0.0.1:40256 - "POST /chats HTTP/1.1" 200
+2026-01-29 22:55:25,611 - INFO - Shutting down
+2026-01-29 22:55:25,712 - INFO - Waiting for application shutdown.
+2026-01-29 22:55:25,712 - INFO - Application shutdown complete.
+2026-01-29 22:55:25,712 - INFO - Finished server process [67597]
+2026-01-29 22:55:26,002 - INFO - Started server process [67642]
+2026-01-29 22:55:26,002 - INFO - Waiting for application startup.
+2026-01-29 22:55:26,003 - INFO - Application startup complete.
+2026-01-29 22:55:28,903 - INFO - 127.0.0.1:38142 - "POST /chats HTTP/1.1" 200
+2026-01-29 22:55:40,119 - INFO - 127.0.0.1:40442 - "POST /chat/create_new/my%20cool%20barking%20car HTTP/1.1" 303
+2026-01-29 22:55:40,123 - INFO - 127.0.0.1:40442 - "GET /chat/f35898be-ced7-4630-ab58-8c52c0b770d7 HTTP/1.1" 200
+2026-01-29 22:55:47,992 - INFO - 127.0.0.1:50832 - "POST /chats HTTP/1.1" 200
+2026-01-29 22:55:52,692 - INFO - 127.0.0.1:50832 - "GET /docs2 HTTP/1.1" 404
+2026-01-29 22:55:52,727 - INFO - 127.0.0.1:56494 - "GET /favicon.ico HTTP/1.1" 404
+2026-01-29 22:55:57,041 - INFO - 127.0.0.1:50832 - "GET /docs HTTP/1.1" 200
+2026-01-29 22:55:57,226 - INFO - 127.0.0.1:50832 - "GET /openapi.json HTTP/1.1" 200
+2026-01-29 22:56:10,720 - INFO - 127.0.0.1:36048 - "GET /redoc HTTP/1.1" 200
+2026-01-29 22:56:11,002 - INFO - 127.0.0.1:36048 - "GET /openapi.json HTTP/1.1" 200
+2026-01-29 22:56:56,856 - INFO - 127.0.0.1:37332 - "GET /docs HTTP/1.1" 200
+2026-01-29 22:56:57,059 - INFO - 127.0.0.1:37332 - "GET /openapi.json HTTP/1.1" 200
+2026-01-29 22:57:00,320 - INFO - 127.0.0.1:37332 - "POST /chats HTTP/1.1" 200
+2026-01-29 22:57:21,343 - INFO - 127.0.0.1:45864 - "POST /chat/create_new/bark%20bark%20%22%5D%2C%20%5B%22hi HTTP/1.1" 303
+2026-01-29 22:57:21,346 - INFO - 127.0.0.1:45864 - "GET /chat/f1ad84e5-122a-4995-8aa3-1aecd1cd4be2 HTTP/1.1" 200
+2026-01-29 22:57:29,766 - INFO - 127.0.0.1:45876 - "POST /chats HTTP/1.1" 200
+2026-01-29 22:58:15,582 - INFO - 127.0.0.1:50402 - "POST /chat/f1ad84e5-122a-4995-8aa3-1aecd1cd4be2/messages HTTP/1.1" 200
+2026-01-29 22:58:16,990 - INFO - 127.0.0.1:50402 - "POST /chat/f1ad84e5-122a-4995-8aa3-1aecd1cd4be2/messages HTTP/1.1" 200
+2026-01-29 23:01:12,481 - INFO - 127.0.0.1:55838 - "POST /chats HTTP/1.1" 200
+2026-01-29 23:04:47,545 - INFO - Shutting down
+2026-01-29 23:04:47,645 - INFO - Waiting for application shutdown.
+2026-01-29 23:04:47,646 - INFO - Application shutdown complete.
+2026-01-29 23:04:47,646 - INFO - Finished server process [67642]
+2026-01-29 23:04:47,955 - INFO - Started server process [68251]
+2026-01-29 23:04:47,955 - INFO - Waiting for application startup.
+2026-01-29 23:04:47,956 - INFO - Application startup complete.
+2026-01-29 23:04:50,568 - INFO - Shutting down
+2026-01-29 23:04:50,668 - INFO - Waiting for application shutdown.
+2026-01-29 23:04:50,669 - INFO - Application shutdown complete.
+2026-01-29 23:04:50,669 - INFO - Finished server process [68251]
+2026-01-29 23:04:50,933 - INFO - Started server process [68256]
+2026-01-29 23:04:50,933 - INFO - Waiting for application startup.
+2026-01-29 23:04:50,934 - INFO - Application startup complete.
+2026-01-29 23:04:52,739 - INFO - Shutting down
+2026-01-29 23:04:52,839 - INFO - Waiting for application shutdown.
+2026-01-29 23:04:52,839 - INFO - Application shutdown complete.
+2026-01-29 23:04:52,839 - INFO - Finished server process [68256]
+2026-01-29 23:04:54,847 - INFO - Started server process [68267]
+2026-01-29 23:04:54,847 - INFO - Waiting for application startup.
+2026-01-29 23:04:54,847 - INFO - Application startup complete.
+2026-01-29 23:04:58,686 - INFO - 127.0.0.1:56688 - "GET /docs HTTP/1.1" 200
+2026-01-29 23:04:58,906 - INFO - 127.0.0.1:56688 - "GET /openapi.json HTTP/1.1" 200
+2026-01-29 23:05:49,319 - INFO - 127.0.0.1:46650 - "POST /chats HTTP/1.1" 200
+2026-01-29 23:05:56,671 - INFO - 127.0.0.1:33360 - "POST /chat/create_new/nuts HTTP/1.1" 303
+2026-01-29 23:05:56,675 - INFO - 127.0.0.1:33360 - "GET /chat/7ca821ca-4fd4-4c52-bc1d-235faa0dc594 HTTP/1.1" 200
+2026-01-29 23:06:01,237 - INFO - 127.0.0.1:33360 - "POST /chats HTTP/1.1" 200
+2026-01-29 23:06:23,762 - INFO - 127.0.0.1:33704 - "POST /chat/7ca821ca-4fd4-4c52-bc1d-235faa0dc593/new_message/kivattt/yip%21 HTTP/1.1" 200
+2026-01-29 23:06:28,730 - INFO - 127.0.0.1:33704 - "POST /chat/7ca821ca-4fd4-4c52-bc1d-235faa0dc594/new_message/kivattt/yip%21 HTTP/1.1" 500
+2026-01-29 23:06:28,731 - ERROR - Exception in ASGI application
+Traceback (most recent call last):
+  File "/home/kivah/main/projects/learning_pydantic2/.venv/lib/python3.14/site-packages/uvicorn/protocols/http/h11_impl.py", line 410, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        self.scope, self.receive, self.send
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/kivah/main/projects/learning_pydantic2/.venv/lib/python3.14/site-packages/uvicorn/middleware/proxy_headers.py", line 60, in __call__
+    return await self.app(scope, receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kivah/main/projects/learning_pydantic2/.venv/lib/python3.14/site-packages/fastapi/applications.py", line 1135, in __call__
+    await super().__call__(scope, receive, send)
+  File "/home/kivah/main/projects/learning_pydantic2/.venv/lib/python3.14/site-packages/starlette/applications.py", line 107, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/home/kivah/main/projects/learning_pydantic2/.venv/lib/python3.14/site-packages/starlette/middleware/errors.py", line 186, in __call__
+    raise exc
+  File "/home/kivah/main/projects/learning_pydantic2/.venv/lib/python3.14/site-packages/starlette/middleware/errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "/home/kivah/main/projects/learning_pydantic2/.venv/lib/python3.14/site-packages/starlette/middleware/exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "/home/kivah/main/projects/learning_pydantic2/.venv/lib/python3.14/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/home/kivah/main/projects/learning_pydantic2/.venv/lib/python3.14/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/home/kivah/main/projects/learning_pydantic2/.venv/lib/python3.14/site-packages/fastapi/middleware/asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "/home/kivah/main/projects/learning_pydantic2/.venv/lib/python3.14/site-packages/starlette/routing.py", line 716, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/home/kivah/main/projects/learning_pydantic2/.venv/lib/python3.14/site-packages/starlette/routing.py", line 736, in app
+    await route.handle(scope, receive, send)
+  File "/home/kivah/main/projects/learning_pydantic2/.venv/lib/python3.14/site-packages/starlette/routing.py", line 290, in handle
+    await self.app(scope, receive, send)
+  File "/home/kivah/main/projects/learning_pydantic2/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 115, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "/home/kivah/main/projects/learning_pydantic2/.venv/lib/python3.14/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/home/kivah/main/projects/learning_pydantic2/.venv/lib/python3.14/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/home/kivah/main/projects/learning_pydantic2/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 101, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "/home/kivah/main/projects/learning_pydantic2/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 355, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "/home/kivah/main/projects/learning_pydantic2/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 243, in run_endpoint_function
+    return await dependant.call(**values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kivah/main/projects/learning_pydantic2/main.py", line 67, in new_message
+    new_message = Message(
+        string=text,
+        author=author,
+        timestamp=datetime.time(),
+    )
+TypeError: Message.__init__() missing 1 required positional argument: 'is_server_message'
+2026-01-29 23:06:37,579 - INFO - Shutting down
+2026-01-29 23:06:37,679 - INFO - Waiting for application shutdown.
+2026-01-29 23:06:37,679 - INFO - Application shutdown complete.
+2026-01-29 23:06:37,679 - INFO - Finished server process [68267]
+2026-01-29 23:06:37,966 - INFO - Started server process [68396]
+2026-01-29 23:06:37,967 - INFO - Waiting for application startup.
+2026-01-29 23:06:37,967 - INFO - Application startup complete.
+2026-01-29 23:06:50,696 - INFO - Shutting down
+2026-01-29 23:06:50,796 - INFO - Waiting for application shutdown.
+2026-01-29 23:06:50,797 - INFO - Application shutdown complete.
+2026-01-29 23:06:50,797 - INFO - Finished server process [68396]
+2026-01-29 23:06:51,080 - INFO - Started server process [68412]
+2026-01-29 23:06:51,080 - INFO - Waiting for application startup.
+2026-01-29 23:06:51,081 - INFO - Application startup complete.
+2026-01-29 23:06:56,443 - INFO - 127.0.0.1:49308 - "POST /chat/7ca821ca-4fd4-4c52-bc1d-235faa0dc593/new_message/kivattt/yip%21 HTTP/1.1" 200
+2026-01-29 23:06:59,306 - INFO - 127.0.0.1:49308 - "POST /chat/7ca821ca-4fd4-4c52-bc1d-235faa0dc594/new_message/kivattt/yip%21 HTTP/1.1" 200
+2026-01-29 23:07:12,097 - INFO - 127.0.0.1:57834 - "POST /chat/7ca821ca-4fd4-4c52-bc1d-235faa0dc593/messages HTTP/1.1" 200
+2026-01-29 23:07:17,041 - INFO - 127.0.0.1:57834 - "POST /chat/7ca821ca-4fd4-4c52-bc1d-235faa0dc594/messages HTTP/1.1" 200
+2026-01-29 23:07:40,297 - INFO - Shutting down
+2026-01-29 23:07:40,398 - INFO - Waiting for application shutdown.
+2026-01-29 23:07:40,398 - INFO - Application shutdown complete.
+2026-01-29 23:07:40,398 - INFO - Finished server process [68412]
+2026-01-29 23:07:40,697 - INFO - Started server process [68559]
+2026-01-29 23:07:40,697 - INFO - Waiting for application startup.
+2026-01-29 23:07:40,698 - INFO - Application startup complete.
+2026-01-29 23:07:44,910 - INFO - Shutting down
+2026-01-29 23:07:45,010 - INFO - Waiting for application shutdown.
+2026-01-29 23:07:45,010 - INFO - Application shutdown complete.
+2026-01-29 23:07:45,011 - INFO - Finished server process [68559]
+2026-01-29 23:07:45,422 - INFO - Started server process [68571]
+2026-01-29 23:07:45,423 - INFO - Waiting for application startup.
+2026-01-29 23:07:45,423 - INFO - Application startup complete.
+2026-01-29 23:07:55,522 - INFO - 127.0.0.1:52156 - "POST /chat/create_new/fixed HTTP/1.1" 303
+2026-01-29 23:07:55,528 - INFO - 127.0.0.1:52156 - "GET /chat/7ec466c9-568f-4ffb-9898-a3f498b3dffe HTTP/1.1" 200
+2026-01-29 23:08:00,229 - INFO - 127.0.0.1:52156 - "POST /chats HTTP/1.1" 200
+2026-01-29 23:08:09,985 - INFO - 127.0.0.1:38972 - "POST /chat/7ec466c9-568f-4ffb-9898-a3f498b3dffe/messages HTTP/1.1" 200
+2026-01-29 23:08:17,372 - INFO - 127.0.0.1:49508 - "POST /chat/7ec466c9-568f-4ffb-9898-a3f498b3dffe/new_message/kivattt/yip%21 HTTP/1.1" 200
+2026-01-29 23:08:21,306 - INFO - 127.0.0.1:49508 - "POST /chat/7ec466c9-568f-4ffb-9898-a3f498b3dffe/messages HTTP/1.1" 200
+2026-01-29 23:08:49,581 - INFO - Shutting down
+2026-01-29 23:08:49,681 - INFO - Waiting for application shutdown.
+2026-01-29 23:08:49,682 - INFO - Application shutdown complete.
+2026-01-29 23:08:49,682 - INFO - Finished server process [68571]
+2026-01-29 23:08:50,029 - INFO - Started server process [68619]
+2026-01-29 23:08:50,029 - INFO - Waiting for application startup.
+2026-01-29 23:08:50,030 - INFO - Application startup complete.
