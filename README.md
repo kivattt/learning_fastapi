@@ -20,3 +20,4 @@ Now set the fields so that they look something like this:
 - No authentication
 - Server data is kept in a .json file called `server.json`
 - Might be missing global keyword for the chats mutex... Need to look into it
+- Make a `routers/` folder, like FastAPI suggests [here](https://fastapi.tiangolo.com/tutorial/bigger-applications/). Currently, all routes are defined in `webserver/main.py`
