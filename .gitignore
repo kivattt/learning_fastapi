@@ -12,3 +12,4 @@ wheels/
 # My own (kivattt) rules
 server.json
 *.log
+.idea
