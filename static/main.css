@@ -1,10 +1,10 @@
 :root {
-    --glowing-border: #6598fcff;
-    /*--background-accent: #e8ce3a;*/
-    --button-color: rgba(63, 242, 100, 1);
+    --background: #000408; /* Unused */
     --background-accent: #000000;
-    --background: #000408;
     --text-color: #ffffff;
+    --button-color: rgba(63, 242, 100, 0.7);
+    /*--glowing-border: #6598fcff;*/
+    --glowing-border: rgba(63, 242, 100, 0.7);
 }
 
 html, body {
@@ -36,7 +36,6 @@ body:before {
 }
 
 body {
-    /*background-color: var(--background);*/
     background-color: #00000000;
     position: fixed;
     left: 0;
@@ -45,7 +44,7 @@ body {
 
     color: var(--text-color);
 
-    font-family: "Inter";
+    font-family: "Inter", ui-serif;
 }
 
 button {
@@ -53,7 +52,8 @@ button {
     border-radius: 0px;
     font-size: 3vw;
     font-weight: lighter;
-    
+    color: #ffffff;
+
     width: 50%;
     height: 100%;
     padding-bottom: 5px;
@@ -83,10 +83,10 @@ button {
     background-color: var(--background-accent);
     width: 50%;
     height: 35%;
+    min-width: 400px;
 
     font-size: 5vw;
-    /* FIXME: This gradient isn't dithered. Good luck with that shit :) */
-    filter: drop-shadow(0 0 2rem var(--glowing-border));
+    filter: drop-shadow(0 0 1rem var(--glowing-border));
 }
 
 .container {
@@ -94,4 +94,16 @@ button {
     justify-content: space-between;
     margin-top: 80px;
     gap: 10%;
+}
+
+.inputfield {
+    font-size: 1rem;
+}
+
+input {
+    color: #ffffff;
+    background-color: #2b2a33;
+    border: solid;
+    border-width: 2px;
+    border-color: #8f8f9d;
 }

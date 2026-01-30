@@ -3,16 +3,40 @@
 <html>
 <head>
     <link rel="stylesheet" type="text/css" href="/main.css">
+
+    <script src="index.js"></script>
 </head>
+
+<!-- FIXME: Remove this duplication where we need this template
+for the browser back arrow to work, but also want the initial page
+to load without JS interfering with some onPageLoad kind of thing.
+ -->
+<template id="homepage_modal">
+    Chatroom
+
+    <div class="container">
+        <button onclick="create_chat_button()">Create chat</button>
+        <button onclick="join_chat_button()">Join a chat</button>
+    </div>
+</template>
+
+<template id="join_chat_modal">
+    Enter invite code
+
+    <div class="container">
+        <input class="inputfield" type="text" id="invite_code">
+        <button>Join</button>
+    </div>
+</template>
 
 <body>
 <div class="center_div">
-    <div class="rounded_popup">
+    <div class="rounded_popup" id="homepage">
         Chatroom
 
         <div class="container">
-            <button>Create chat</button>
-            <button>Join a chat</button>
+            <button onclick="create_chat_button()">Create chat</button>
+            <button onclick="join_chat_button()">Join a chat</button>
         </div>
     </div>
 </div>
