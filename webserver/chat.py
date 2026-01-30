@@ -7,6 +7,7 @@ from pydantic import BaseModel
 class User(BaseModel):
     username: str
 
+
 @dataclass(frozen=True)
 class Message(BaseModel):
     is_server_message: bool

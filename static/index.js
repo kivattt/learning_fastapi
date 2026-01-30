@@ -7,7 +7,7 @@ const urlFragmentToID = {
 };
 
 const idToUrlFragment = Object.fromEntries(
-  Object.entries(urlFragmentToID).map(([k, v]) => [v, k])
+    Object.entries(urlFragmentToID).map(([k, v]) => [v, k])
 );
 
 function change_to_page_fragment() {
