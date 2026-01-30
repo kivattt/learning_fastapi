@@ -1,0 +1,97 @@
+:root {
+    --glowing-border: #6598fcff;
+    /*--background-accent: #e8ce3a;*/
+    --button-color: rgba(63, 242, 100, 1);
+    --background-accent: #000000;
+    --background: #000408;
+    --text-color: #ffffff;
+}
+
+html, body {
+    margin: 0;
+    height: 100%;
+}
+
+@font-face {
+    font-family: "Inter";
+    src: url("fonts/Inter/Inter-Regular.ttf") format("opentype");
+}
+
+body:before {
+    content: "";
+    position: fixed;
+    left: 0;
+    right: 0;
+    z-index: -1;
+    display: block;
+    width: 100%;
+    height: 100%;
+
+    background-image: url("fox_inverted.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+
+    filter: grayscale(100%);
+}
+
+body {
+    /*background-color: var(--background);*/
+    background-color: #00000000;
+    position: fixed;
+    left: 0;
+    right: 0;
+    z-index: 9999;
+
+    color: var(--text-color);
+
+    font-family: "Inter";
+}
+
+button {
+    border: none;
+    border-radius: 0px;
+    font-size: 3vw;
+    font-weight: lighter;
+    
+    width: 50%;
+    height: 100%;
+    padding-bottom: 5px;
+    background: linear-gradient(135deg, var(--button-color) 0%, rgba(87, 199, 160, 1.0) 95%, rgba(0, 0, 0, 0) 95%);
+
+    cursor: pointer;
+}
+
+.center_div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 100%;
+    height: 100%;
+}
+
+.rounded_popup {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    padding-top: 100px;
+
+    border: 20px;
+    border-radius: 25px;
+    background-color: var(--background-accent);
+    width: 50%;
+    height: 35%;
+
+    font-size: 5vw;
+    /* FIXME: This gradient isn't dithered. Good luck with that shit :) */
+    filter: drop-shadow(0 0 2rem var(--glowing-border));
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 80px;
+    gap: 10%;
+}

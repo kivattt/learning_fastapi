@@ -10,6 +10,7 @@ from uuid import UUID
 from fastapi import FastAPI
 from fastapi.encoders import jsonable_encoder
 from starlette.responses import RedirectResponse
+from starlette.staticfiles import StaticFiles
 
 from webserver.chat import Message, User
 from webserver.server import load_server_from_file, write_server_file, Server
@@ -47,6 +48,9 @@ app = FastAPI(
         "url": "https://opensource.org/license/mit",
     }
 )
+
+# Mount our static .html/.css/.js files
+app.mount("/", StaticFiles(directory="static", html=True), name="static")
 
 server_filename = "server.json"
 server_global: Server
@@ -94,6 +98,7 @@ async def chat(uuid: UUID):
         return "hello world! :3"
 
 
+# Private endpoints we don't want to expose in production
 if ENVIRONMENT == "dev":
     @app.post("/chats")
     async def chats_list():
