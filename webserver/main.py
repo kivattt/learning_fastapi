@@ -50,11 +50,15 @@ app = FastAPI(
 )
 
 # Mount our static .html/.css/.js files
-app.mount("/", StaticFiles(directory="static", html=True), name="static")
+app.mount("/static", StaticFiles(directory="static", html=True), name="static")
 
 server_filename = "server.json"
 server_global: Server
 
+
+@app.get("/")
+async def root():
+    return RedirectResponse(status_code=SEE_OTHER, url="/static")
 
 @app.post("/chat/create_new/{chat_title}")
 async def create_new_chat(chat_title: str):
