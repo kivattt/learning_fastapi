@@ -12,6 +12,10 @@ FIXME: Remove this duplication where we need this template
 for the browser back arrow to work, but also want the initial page
 to load without JS interfering with some onPageLoad kind of thing.
 
+Seems like we need JS either way to move templates to a separate html file...
+I hear HTTP/2 can combine html files in a single request, but my current FastAPI setup
+only uses HTTP/1.1...
+
 We should move these templates to a separate file if we can.
 -->
 <template id="homepage_modal">
