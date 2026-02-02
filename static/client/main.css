@@ -1,0 +1,36 @@
+:root {
+    --background: #000408; /* Unused */
+    --background-accent: #000000;
+    --text-color: #ffffff;
+    --button-color: rgba(63, 242, 100, 0.7);
+    --username-color: #606066;
+}
+
+html, body {
+    margin: 0;
+    height: 100%;
+}
+
+@font-face {
+    font-family: "Inter";
+    src: url("/static/fonts/Inter/Inter-Regular.ttf") format("opentype");
+}
+
+body {
+    background-color: #02080a;
+    color: var(--text-color);
+
+    font-family: "Inter", ui-serif;
+}
+
+.message {
+    font-family: "Inter", ui-serif;
+    padding-top: 8px;
+    padding-bottom: 8px;
+}
+
+.username {
+    font-family: monospace;
+    font-size: 1rem;
+    color: var(--username-color);
+}

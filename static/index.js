@@ -38,3 +38,16 @@ function join_chat_button() {
     const joinChatModal = document.getElementById("join_chat_modal");
     window.location.hash = idToUrlFragment[joinChatModal.id];
 }
+
+function join_chat_from_invite_button() {
+    const invite_code = document.getElementById("invite_code").value;
+    // FIXME: Check if invite code is invalid, then show a descriptive error message
+
+    const query_parameters = new URLSearchParams({
+        chat_id: invite_code,
+    });
+
+//    alert("/static/client/?" + query_parameters);
+
+    window.location.href = "/static/client/?" + query_parameters;
+}

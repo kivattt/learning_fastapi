@@ -14,7 +14,7 @@ html, body {
 
 @font-face {
     font-family: "Inter";
-    src: url("fonts/Inter/Inter-Regular.ttf") format("opentype");
+    src: url("/static/fonts/Inter/Inter-Regular.ttf") format("opentype");
 }
 
 body:before {

@@ -5,7 +5,6 @@ import sys
 from contextlib import asynccontextmanager
 from http.client import SEE_OTHER
 from logging import INFO
-from uuid import UUID
 
 from fastapi import FastAPI
 from fastapi.encoders import jsonable_encoder
@@ -60,16 +59,18 @@ server_global: Server
 async def root():
     return RedirectResponse(status_code=SEE_OTHER, url="/static")
 
+
 @app.post("/chat/create_new/{chat_title}")
 async def create_new_chat(chat_title: str):
-    uuid = server_global.create_new_chat(chat_title)
-    return RedirectResponse(status_code=SEE_OTHER, url="/chat/" + str(uuid))
+    chat_id = server_global.create_new_chat(chat_title)
+    return RedirectResponse(status_code=SEE_OTHER, url="/chat/" + str(chat_id))
 
 
-@app.post("/chat/{uuid}/new_message/{author}/{text}")
-async def new_message(uuid: UUID, author: str, text: str):
+@app.post("/chat/{chat_id}/new_message/{author}/{text}")
+async def new_message(chat_id: str, author: str, text: str):
+    print("DEBUGGING:", chat_id, author, text)
     with server_global._chats_lock:
-        if uuid not in server_global.chats:
+        if chat_id not in server_global.chats:
             return "This chat does not exist"  # FIXME: Return a proper error message in JSON
 
         new_message = Message(
@@ -78,28 +79,32 @@ async def new_message(uuid: UUID, author: str, text: str):
             author=User(username=author),
             timestamp=datetime.datetime.now(),
         )
-        server_global.chats[uuid].add_message(new_message)
+        server_global.chats[chat_id].add_message(new_message)
         return "Success"  # FIXME: Return a proper success message in JSON
 
 
-@app.post("/chat/{uuid}/messages")
-async def messages(uuid: UUID):
+@app.post("/chat/{chat_id}/messages")
+async def messages(chat_id: str):
     with server_global._chats_lock:
-        print("UUID:", uuid)
-        if uuid not in server_global.chats:
+        if chat_id not in server_global.chats:
             return "This chat does not exist"  # FIXME: Return a proper error message in JSON
 
-        return jsonable_encoder(server_global.chats[uuid].message_history)
+        return jsonable_encoder(server_global.chats[chat_id].message_history)
 
 
-@app.get("/chat/{uuid}")
-async def chat(uuid: UUID):
+@app.get("/chat/{chat_id}")
+async def chat(chat_id: str):
     with server_global._chats_lock:
-        print("UUID:", uuid)
-        if uuid not in server_global.chats:
+        if chat_id not in server_global.chats:
             return "This chat does not exist"  # FIXME: Return a proper error message in JSON
 
         return "hello world! :3"
+
+'''
+@app.get("/client")
+async def client(chat_id: str): # URL query parameter
+    return RedirectResponse(status_code=SEE_OTHER, url="/client")
+'''
 
 
 # Private endpoints we don't want to expose in production
@@ -108,14 +113,14 @@ if ENVIRONMENT == "dev":
     async def chats_list():
         print("in chats_list: server_global = ", server_global)
         with server_global._chats_lock:
-            list_of_chat_uuids: list[str] = []
-            for uuid in server_global.chats.keys():
-                # list_of_chat_uuids.append(uuid)
+            list_of_chat_chat_ids: list[str] = []
+            for chat_id in server_global.chats.keys():
+                # list_of_chat_chat_ids.append(chat_id)
 
-                title = server_global.chats[uuid].title
-                list_of_chat_uuids.append(str(uuid) + " / " + title)
+                title = server_global.chats[chat_id].title
+                list_of_chat_chat_ids.append(str(chat_id) + " / " + title)
 
-            return jsonable_encoder(list_of_chat_uuids)
+            return jsonable_encoder(list_of_chat_chat_ids)
 
 
 def startup():
