@@ -3,7 +3,8 @@
     --background-accent: #000000;
     --text-color: #ffffff;
     --button-color: rgba(63, 242, 100, 0.7);
-    --username-color: #606066;
+    --username-color: #40d6f7;
+    --server-username-color: #f74d40;
 }
 
 html, body {
@@ -33,4 +34,39 @@ body {
     font-family: monospace;
     font-size: 1rem;
     color: var(--username-color);
+}
+
+.server_username {
+    font-family: monospace;
+    font-size: 1rem;
+    font-weight: bold;
+    color: var(--server-username-color);
+}
+
+.lower_bar {
+    position: fixed;
+    bottom: 0%;
+    height: 60px;
+    width: 100%;
+    background-color: #3f3f40;
+
+    border: none;
+    border-top: 2px solid;
+    border-color: #8f8f9d;
+}
+
+.inputfield {
+    font-size: 1rem;
+}
+
+input {
+    font-family: "Inter", ui-serif;
+
+    padding-left: 20px;
+    border: none;
+    outline: 0;
+    color: #ffffff;
+    background-color: #2b2a33;
+    height: 100%;
+    width: 100%;
 }

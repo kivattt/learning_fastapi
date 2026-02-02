@@ -11,28 +11,64 @@ function load_messages() {
             method: "POST",
         }).then(response => {
             if (!response.ok) {
-                throw new Error("God fucking damnit")
+                throw new Error("God fucking damnit");
             }
             return response.json();
         }
     ).then(
         response => {
             messages_global = response;
-            //put_message_global_in_html();
-            console.log(messages_global);
+            put_message_global_in_html();
         }
     );
 }
 
-/*function put_message_global_in_html() {
-    document.getElementById("messages").replaceChildren();
-
-    var new_children = [];
+function put_message_global_in_html() {
+    var root_messages = document.getElementById("messages");
+    root_messages.innerHTML = "";
 
     for (let i = 0; i < messages_global.length; i++) {
-        var msg_element = new Element("div");
-        msg_element.className = "message";
-        msg_element.innerHTML =
-            new_children.push();
+        const msg = messages_global[i];
+
+        let msg_elem = document.createElement("div");
+        msg_elem.className = "message";
+
+        let username_elem = document.createElement("div");
+        if (msg.is_server_message) {
+            username_elem.className = "server_username";
+        } else {
+            username_elem.className = "username";
+        }
+        username_elem.innerHTML = msg["author"].username;
+
+        msg_elem.innerHTML = username_elem.outerHTML;
+        msg_elem.innerHTML += msg["string"];
+
+        root_messages.innerHTML += msg_elem.outerHTML;
     }
-}*/
+}
+
+function send_message() {
+    var input_text = document.getElementById("messagebox").value;
+
+    if (input_text == null || input_text.length === 0) {
+        return;
+    }
+
+    const author = "kivattt";
+
+    const query_parameters = new URLSearchParams(window.location.search);
+    fetch("/chat/" + query_parameters.get("chat_id") + "/new_message/" + author + "/" + input_text, {
+        method: "POST"
+    }).then(response => {
+        if (!response.ok) {
+            throw new Error("I HATE FETCH");
+        }
+        return response.json();
+    }).then(
+        _ => {
+            load_messages(); // Reload the messages because I'm lazy
+            document.getElementById("messagebox").value = "";
+        }
+    )
+}
