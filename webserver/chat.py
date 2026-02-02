@@ -16,22 +16,31 @@ class Message(BaseModel):
     string: str
     timestamp: datetime
 
+
+def sanitize_author(author: User) -> User:
+    author_copy = User(
+        username=nh3.clean(author.username),
+    )
+    return author_copy
+
+
 def sanitize_message(msg: Message) -> Message:
     message_copy = Message(
         is_server_message=msg.is_server_message,
-        author=msg.author,
+        author=sanitize_author(msg.author),
         string=nh3.clean(msg.string),
         timestamp=msg.timestamp,
     )
     return message_copy
+
 
 class Chat(BaseModel):
     title: str
     message_history: list[Message]
 
     def add_message(self, new_message: Message):
-        self.message_history.append(new_message)
+        self.message_history.append(sanitize_message(new_message))
 
     def add_server_message(self, new_message: Message):
         new_message.is_server_message = True
-        self.message_history.append(new_message)
+        self.message_history.append(sanitize_message(new_message))

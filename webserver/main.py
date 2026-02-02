@@ -100,12 +100,12 @@ async def chat(chat_id: str):
 
         return "hello world! :3"
 
+
 '''
 @app.get("/client")
 async def client(chat_id: str): # URL query parameter
     return RedirectResponse(status_code=SEE_OTHER, url="/client")
 '''
-
 
 # Private endpoints we don't want to expose in production
 if ENVIRONMENT == "dev":

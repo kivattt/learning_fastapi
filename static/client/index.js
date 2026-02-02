@@ -18,7 +18,21 @@ function load_messages() {
     ).then(
         response => {
             messages_global = response;
+            //put_message_global_in_html();
             console.log(messages_global);
         }
     );
 }
+
+/*function put_message_global_in_html() {
+    document.getElementById("messages").replaceChildren();
+
+    var new_children = [];
+
+    for (let i = 0; i < messages_global.length; i++) {
+        var msg_element = new Element("div");
+        msg_element.className = "message";
+        msg_element.innerHTML =
+            new_children.push();
+    }
+}*/
