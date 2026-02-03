@@ -11,7 +11,7 @@ function load_messages() {
             method: "POST",
         }).then(response => {
             if (!response.ok) {
-                throw new Error("God fucking damnit");
+                throw new Error("Response not OK");
             }
             return response.json();
         }
@@ -62,7 +62,7 @@ function send_message() {
         method: "POST"
     }).then(response => {
         if (!response.ok) {
-            throw new Error("I HATE FETCH");
+            throw new Error("Response not OK");
         }
         return response.json();
     }).then(

@@ -63,7 +63,7 @@ async def root():
 @app.post("/chat/create_new/{chat_title}")
 async def create_new_chat(chat_title: str):
     chat_id = server_global.create_new_chat(chat_title)
-    return RedirectResponse(status_code=SEE_OTHER, url="/chat/" + str(chat_id))
+    return chat_id
 
 
 @app.post("/chat/{chat_id}/new_message/{author}/{text}")
